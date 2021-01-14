@@ -1,0 +1,43 @@
+html{
+  background: rgb(63,94,251);
+  background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+}
+
+
+body {
+  display: flex;
+flex-direction: column;
+}
+
+h1{
+  align-self: center;
+  margin-bottom: 80px;
+  color: white;
+}
+
+section {
+  width: 80%;
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0px 100px;
+}
+
+
+img {
+  height: 400px;
+  width: auto;
+  box-shadow: 0px 0px 100px white;
+  border-radius: 6px;
+}
+
+
+p {
+  color: white;
+  text-align: center;
+}
+
+  .hidden {
+display: none;
+}
