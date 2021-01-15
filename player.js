@@ -9,7 +9,7 @@ class Player {
     game.cards.unshift(this.hand.pop())
     if (game.turn === player1) {
       game.turn = player2
-    } else {
+    } else if(game.turn === player2) {
       game.turn = player1
     }
   }
