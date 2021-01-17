@@ -1,9 +1,11 @@
 var gameUpdate = document.querySelector('.game-updates')
 var middleDeck = document.querySelector('#mid-deck')
-
+var player1Wins = document.querySelector('.player1-wins')
+var player2Wins = document.querySelector('.player2-wins')
 document.addEventListener('keyup', keyPressFunctions)
 
 window.addEventListener('load', startGame)
+window.addEventListener('load', retrieveSaved)
 
 
 
@@ -53,6 +55,8 @@ window.addEventListener('load', startGame)
     if (gamePlay.turn === 'player2revive') {
       player1.wins++
       gameUpdate.innerText = 'Player 1 Wins!!!'
+      player1Wins.innerText = `Wins: ${player1.wins}`
+      player1.saveWinsToStorage();
     } else {
       gameUpdate.innerText = 'Player 1 Slapped!. He receives the center pile.'
       playerWinsPile(player1);
@@ -66,6 +70,8 @@ window.addEventListener('load', startGame)
     if (gamePlay.turn === 'player1revive') {
       player2.wins++
       gameUpdate.innerText = 'Player 2 Wins!!!'
+      player2.saveWinsToStorage();
+      player2Wins.innerText = `Wins: ${player2.wins}`
     } else {
     gameUpdate.innerText = 'Player 2 Slapped!. He receives the center pile.'
     playerWinsPile(player2);
@@ -103,4 +109,13 @@ window.addEventListener('load', startGame)
     } else {
       gameUpdate.innerText = 'Player 1 must get the next slap to stay alive!'
     }
+  }
+
+  function retrieveSaved() {
+    var parsedP1 = JSON.parse(localStorage.getItem('player1-wins'))
+    var parsedP2 = JSON.parse(localStorage.getItem('player2-wins'))
+    player1.wins = parsedP1.wins
+    player2.wins = parsedP2.wins
+    player1Wins.innerText = `Wins: ${player1.wins}`
+    player2Wins.innerText = `Wins: ${player2.wins}`
   }

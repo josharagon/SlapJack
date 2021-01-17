@@ -14,4 +14,11 @@ class Player {
     }
   }
 
+  saveWinsToStorage() {
+    var stringifiedP1 = JSON.stringify(player1);
+    var stringifiedP2 = JSON.stringify(player2);
+    localStorage.setItem('player1-wins', stringifiedP1);
+    localStorage.setItem('player2-wins', stringifiedP2);
+  }
+
 }
