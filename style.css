@@ -12,7 +12,7 @@ flex-direction: column;
 h1{
   align-self: center;
   margin-bottom: 80px;
-  color: white;
+  color: black;
 }
 
 section {
@@ -33,7 +33,9 @@ img {
 
 
 p {
-  color: white;
+  font-size: larger;
+  background-color: transparent;
+  color: black;
   text-align: center;
 }
 
