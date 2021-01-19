@@ -47,6 +47,7 @@ class Game {
   playerWinsGame(player) {
     gameUpdate.innerText = `${player.name} Wins!!!`;
     player.wins++;
+    document.removeEventListener('keyup', keyPressFunctions)
     player.saveWinsToStorage();
     setTimeout(function(){gamePlay.resetGame()}, 3000);
   };

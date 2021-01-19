@@ -17,6 +17,7 @@ window.addEventListener('load', retrieveSaved)
      gamePlay = new Game();
      gamePlay.shuffle();
      gamePlay.dealDeck();
+     document.addEventListener('keyup', keyPressFunctions)
      gameUpdate.innerText = `${gamePlay.turn.name}'s Turn!`;
   };
 
