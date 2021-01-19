@@ -10,7 +10,7 @@ class Player {
     if (game.turn === player1) {
       game.turn = player2
       middleDeck.style.boxShadow = '0px 0px 25px deeppink'
-      underCard.style.boxShadow = '0px 0px 75px blue'
+      underCard.style.boxShadow = '0px 0px 40px blue'
     } else if(game.turn === player2) {
       game.turn = player1
       middleDeck.style.boxShadow = '0px 0px 25px blue'
