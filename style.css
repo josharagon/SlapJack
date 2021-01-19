@@ -45,7 +45,7 @@ display: none;
     position: relative;
   }
 
-  #top-of-deck {
+  .top-of-deck {
     top: 2%;
     left:5%;
   }

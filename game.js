@@ -28,7 +28,7 @@ class Game {
     this.players[0].hand = player1Deck
     this.players[1].hand = player2Deck
   }
-
+  
   resetGame() {
     player1.cards = []
     player2.cards = []
