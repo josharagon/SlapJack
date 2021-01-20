@@ -11,13 +11,13 @@ class Game {
   }
 
 
-  shuffle() {
+  shuffle(array) {
 	for (var i = 0; i < 1000; i++) {
-		var location1 = Math.floor((Math.random() * this.cards.length));
-		var location2 = Math.floor((Math.random() * this.cards.length));
-		var tmp = this.cards[location1];
-		this.cards[location1] = this.cards[location2];
-		this.cards[location2] = tmp;
+		var location1 = Math.floor((Math.random() * array.length));
+		var location2 = Math.floor((Math.random() * array.length));
+		var tmp = array[location1];
+		array[location1] = array[location2];
+		array[location2] = tmp;
   };
  };
 
@@ -35,9 +35,9 @@ class Game {
       playerWins.innerText = `Wins: ${player.wins}`;
     } else if (gamePlay.cards[0].includes('jack') && opponent.hand.length > 0) {
       playerSlapJack(player, opponent);
-    } else if (gamePlay.turn != turn && opponent.hand.length >= 1 && gamePlay.cards.length > 2 && gamePlay.cards[0].slice(-2) === gamePlay.cards[1].slice(-2)) {
+    } else if (gamePlay.turn != turn && opponent.hand.length >= 1 && gamePlay.cards.length >= 2 && gamePlay.cards[0].slice(-2) === gamePlay.cards[1].slice(-2)) {
       playerDouble(player, opponent);
-    } else if (gamePlay.turn != turn && opponent.hand.length >= 1 && gamePlay.cards.length > 2 && gamePlay.cards[0].slice(-2) === gamePlay.cards[2].slice(-2)) {
+    } else if (gamePlay.turn != turn && opponent.hand.length >= 1 && gamePlay.cards.length >= 2 && gamePlay.cards[0].slice(-2) === gamePlay.cards[2].slice(-2)) {
       playerSandwich(player, opponent);
     } else {
       falseSlap(player, opponent);
