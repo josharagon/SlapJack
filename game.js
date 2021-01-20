@@ -9,8 +9,6 @@ class Game {
       "green-01", "green-02", "green-03", "green-04", "green-05", "green-06", "green-07", "green-08", "green-09", "green-10", "green-jack", "green-king", "green-queen",
       "red-01", "red-02", "red-03", "red-04", "red-05", "red-06", "red-07", "red-08", "red-09", "red-10", "red-jack", "red-king", "red-queen"];
   }
-
-
   shuffle(array) {
 	for (var i = 0; i < 1000; i++) {
 		var location1 = Math.floor((Math.random() * array.length));
@@ -20,7 +18,6 @@ class Game {
 		array[location2] = tmp;
   };
  };
-
   dealDeck() {
     var half = Math.ceil(this.cards.length / 2);
     var player1Deck = this.cards.splice(0, half);
@@ -28,7 +25,6 @@ class Game {
     this.players[0].hand = player1Deck;
     this.players[1].hand = player2Deck;
   };
-
   playerSlap(player, opponent, turn, opponentTurn, playerWins) {
     if (gamePlay.turn === opponentTurn && gamePlay.cards[0].includes('jack')) {
       gamePlay.playerWinsGame(player);
@@ -43,7 +39,6 @@ class Game {
       falseSlap(player, opponent);
     };
   };
-
   playerWinsGame(player) {
     gameUpdate.innerText = `${player.name} Wins!!!`;
     player.wins++;
@@ -51,7 +46,6 @@ class Game {
     player.saveWinsToStorage();
     setTimeout(function(){gamePlay.resetGame()}, 3000);
   };
-
   resetGame() {
     player1.cards = [];
     player2.cards = [];
@@ -63,6 +57,5 @@ class Game {
     removeMiddleDeck();
     startGame();
     setTimeout(function(){updateStatus()}, 3000);
-  }
-
-}
+  };
+};

@@ -13,7 +13,7 @@ window.addEventListener('load', startGame);
 window.addEventListener('load', retrieveSaved);
 
 //FUNCTIONS
-  function startGame () {
+  function startGame() {
      gamePlay = new Game();
      gamePlay.shuffle(gamePlay.cards);
      gamePlay.dealDeck();
@@ -37,11 +37,11 @@ window.addEventListener('load', retrieveSaved);
     } else if (player1.hand.length === 0) {
       gamePlay.turn = 'player1revive';
       player1Card.classList.add('pile-empty')
-      setTimeout(function(){updateStatus()}, 2000);
+      setTimeout(function(){updateStatus()}, 1000);
     } else if (player2.hand.length === 0) {
-      player2Card.classList.add('pile-empty')
       gamePlay.turn = 'player2revive';
-      setTimeout(function(){updateStatus()}, 2000);
+      player2Card.classList.add('pile-empty')
+      setTimeout(function(){updateStatus()}, 1000);
     } else if (key === 81 && player2.hand.length === 0) {
       player1.playCard(gamePlay);
       updateStatus();
@@ -145,6 +145,6 @@ window.addEventListener('load', retrieveSaved);
   };
 
   function showPlayerDecks() {
-    player1Card.classList.remove('empty-pile');
-    player2Card.classList.remove('empty-pile');
+    player1Card.classList.remove('pile-empty');
+    player2Card.classList.remove('pile-empty');
   }
