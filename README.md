@@ -7,15 +7,15 @@ Slap Jack is a 2 player card game.
 
 Player 1’s keyboard controls:
 
-q to deal a card
+1. q to deal a card
 
-f to slap
+2. f to slap
 
 Player 2’s keyboard controls:
 
-p to deal a card
+1. p to deal a card
 
-j to slap
+2. j to slap
 
 
 ## Gameplay
