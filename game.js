@@ -35,9 +35,9 @@ class Game {
       playerWins.innerText = `Wins: ${player.wins}`;
     } else if (gamePlay.cards[0].includes('jack') && opponent.hand.length > 0) {
       playerSlapJack(player, opponent);
-    } else if (gamePlay.turn != turn && opponent.hand.length >= 1 && gamePlay.cards.length > 2 && gamePlay.cards[0].slice(-2) === gamePlay.cards[1].slice(-2)) {
+    } else if (gamePlay.turn != turn && opponent.hand.length >= 1 && gamePlay.cards.length >= 2 && gamePlay.cards[0].slice(-2) === gamePlay.cards[1].slice(-2)) {
       playerDouble(player, opponent);
-    } else if (gamePlay.turn != turn && opponent.hand.length >= 1 && gamePlay.cards.length > 2 && gamePlay.cards[0].slice(-2) === gamePlay.cards[2].slice(-2)) {
+    } else if (gamePlay.turn != turn && opponent.hand.length >= 1 && gamePlay.cards.length >= 2 && gamePlay.cards[0].slice(-2) === gamePlay.cards[2].slice(-2)) {
       playerSandwich(player, opponent);
     } else {
       falseSlap(player, opponent);
