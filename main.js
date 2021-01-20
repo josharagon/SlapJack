@@ -34,6 +34,9 @@ function keyPressFunctions(e) {
       gamePlay.playerSlap(player1, player2, 'player1revive', 'player2revive', player1Wins);
   } else if (key === 74) {
       gamePlay.playerSlap(player2, player1, 'player2revive', 'player1revive', player2Wins);
+  } else if(player1.hand.length === 0 && player2.hand.length === 0) {
+      gameUpdate.innerText = 'Draw! Resetting Game.'
+      setTimeout(function(){gamePlay.resetGame()}, 3000);
   } else if (player1.hand.length === 0) {
       gamePlay.turn = 'player1revive';
       player1Card.classList.add('pile-empty')
@@ -42,7 +45,7 @@ function keyPressFunctions(e) {
       gamePlay.turn = 'player2revive';
       player2Card.classList.add('pile-empty')
       setTimeout(function(){updateStatus()}, 1000);
-};
+  };
 };
 
 function falseSlap(player, opponent) {
