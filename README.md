@@ -27,7 +27,7 @@ Double - If (two cards of the same number - such as two Aces, or two Fives, or t
 
 Sandwich - If (two cards of the same number - such as two Aces, or two Fives, or two Queens, separated by a different card in the middle) is on top of the central pile, the entire central pile is added to the player’s hand, and their hand is shuffled automatically.
 
-If a player slaps at any card in the center that is not a jack, they must give one card, face down, to the player of that card. When a player has no more cards left, they remain in the game until the next jack is turned. The player may slap at the jack in an effort to get a new pile. If the player fails to win that next pile, they lose.
+If a player slaps at any card in the center that is not a jack, they must give one card, face down, to the other player. When a player has no more cards left, they remain in the game until the next jack is turned. The player may slap at the jack in an effort to get a new pile. If the player fails to win that next pile, they lose.
 
 
 
