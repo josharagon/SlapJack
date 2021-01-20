@@ -15,9 +15,10 @@ window.addEventListener('load', retrieveSaved);
 //FUNCTIONS
   function startGame () {
      gamePlay = new Game();
-     gamePlay.shuffle();
+     gamePlay.shuffle(gamePlay.cards);
      gamePlay.dealDeck();
      document.addEventListener('keyup', keyPressFunctions);
+     showPlayerDecks();
      gameUpdate.innerText = `${gamePlay.turn.name}'s Turn!`;
   };
 
@@ -25,16 +26,20 @@ window.addEventListener('load', retrieveSaved);
     key = e.keyCode
     if (key === 81 && gamePlay.turn === player1 && player1.hand.length > 0 || key === 81 && gamePlay.turn === 'player2revive') {
       placeCard(player1);
+      player1Card.classList.remove('pile-empty')
     } else if (key === 80 && gamePlay.turn === player2 && player2.hand.length > 0 || key === 80 && gamePlay.turn === 'player1revive') {
       placeCard(player2);
+      player2Card.classList.remove('pile-empty')
     } else if (key === 70) {
       gamePlay.playerSlap(player1, player2, 'player1revive', 'player2revive', player1Wins);
     } else if (key === 74) {
       gamePlay.playerSlap(player2, player1, 'player2revive', 'player1revive', player2Wins);
     } else if (player1.hand.length === 0) {
       gamePlay.turn = 'player1revive';
+      player1Card.classList.add('pile-empty')
       setTimeout(function(){updateStatus()}, 2000);
     } else if (player2.hand.length === 0) {
+      player2Card.classList.add('pile-empty')
       gamePlay.turn = 'player2revive';
       setTimeout(function(){updateStatus()}, 2000);
     } else if (key === 81 && player2.hand.length === 0) {
@@ -66,8 +71,8 @@ window.addEventListener('load', retrieveSaved);
   };
 
   function playerWinsPile(player) {
-    gamePlay.shuffle();
     player.hand = player.hand.concat(gamePlay.cards);
+    gamePlay.shuffle(player.hand);
     gamePlay.cards = [];
   };
 
@@ -138,3 +143,8 @@ window.addEventListener('load', retrieveSaved);
     player1Wins.innerText = `Wins: ${player1.wins}`;
     player2Wins.innerText = `Wins: ${player2.wins}`;
   };
+
+  function showPlayerDecks() {
+    player1Card.classList.remove('empty-pile');
+    player2Card.classList.remove('empty-pile');
+  }

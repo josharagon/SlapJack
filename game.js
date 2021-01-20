@@ -11,13 +11,13 @@ class Game {
   }
 
 
-  shuffle() {
+  shuffle(array) {
 	for (var i = 0; i < 1000; i++) {
-		var location1 = Math.floor((Math.random() * this.cards.length));
-		var location2 = Math.floor((Math.random() * this.cards.length));
-		var tmp = this.cards[location1];
-		this.cards[location1] = this.cards[location2];
-		this.cards[location2] = tmp;
+		var location1 = Math.floor((Math.random() * array.length));
+		var location2 = Math.floor((Math.random() * array.length));
+		var tmp = array[location1];
+		array[location1] = array[location2];
+		array[location2] = tmp;
   };
  };
 

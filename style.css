@@ -56,6 +56,10 @@ display: none;
     box-shadow: 0px 0px 100px deeppink;
   }
 
+  .pile-empty {
+    visibility: hidden;
+  }
+
   .player2-pile > img{
     box-shadow: 0px 0px 100px blue;
   }
