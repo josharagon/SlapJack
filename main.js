@@ -126,9 +126,9 @@ function updateStatus() {
   if (gamePlay.turn === player1 || gamePlay.turn === player2) {
     gameUpdate.innerText = `${gamePlay.turn.name}'s Turn!`;
   } else if (gamePlay.turn === 'player2revive') {
-    gameUpdate.innerText = 'Player 2 must get the next slap to stay alive!';
+    gameUpdate.innerText = 'Player 2 must get the next SlapJack to stay alive!';
   } else {
-    gameUpdate.innerText = 'Player 1 must get the next slap to stay alive!';
+    gameUpdate.innerText = 'Player 1 must get the next SlapJack to stay alive!';
   };
 };
 
